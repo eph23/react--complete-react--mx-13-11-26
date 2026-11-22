@@ -4,7 +4,7 @@ export default function Player({ name, symbol }) {
     const [isEditing, setIsEditing] = useState(false);
 
     function handleEditName() {
-        setIsEditing(!isEditing);
+        setIsEditing((editing) => !editing);
     }
 
     return (
@@ -13,7 +13,7 @@ export default function Player({ name, symbol }) {
                 {!isEditing ? (
                     <span className="player-name">{name}</span>
                 ) : (
-                    isEditing && <input type="text" />
+                    isEditing && <input type="text" required value={name} />
                 )}
                 <span className="player-symbol">{symbol}</span>
             </span>
