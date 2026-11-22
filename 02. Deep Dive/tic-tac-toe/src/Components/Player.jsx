@@ -4,7 +4,7 @@ export default function Player({ name, symbol }) {
     const [isEditing, setIsEditing] = useState(false);
 
     function handleEditName() {
-        setIsEditing(true);
+        setIsEditing(!isEditing);
     }
 
     return (
